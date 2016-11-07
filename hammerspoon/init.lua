@@ -3,14 +3,10 @@
 k = hs.hotkey.modal.new({}, "F17")
 
 -- The following keys are configured as hot keys in their respective apps (or in Keyboard Maestro)
--- d → Dash (configure in Dash preferences)
--- h → HazeOver (configure in HazeOver preferences)
--- m → Alfred -> migraines (can also set with function)i
+-- m → Alfred -> migraines (can also set with function)
 -- n → Notifications configure in System preferences → Keyboard → Shortcuts → Mission Control)
--- f → Fantastical (configure in Fantastical preferences)
--- t → Typinator (configure in Typinator preferences)
--- SPACE → Spotlight (configure in System Preferences → Keyboard → Shortcuts → Spotlight, moved so that ⌘␣ could be used for Quicksilver)
-hyperBindings = {'d','h','m','n','f','t','SPACE'}
+-- SPACE → OmniFocus Quick Entry
+hyperBindings = {'m','n','SPACE'}
 
 for i,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function() hs.eventtap.keyStroke({'cmd','alt','shift','ctrl'}, key)
