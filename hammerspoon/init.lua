@@ -3,11 +3,12 @@
 k = hs.hotkey.modal.new({}, "F17")
 
 -- The following keys are configured as hot keys in their respective apps (or in Keyboard Maestro)
+-- a → Mute Zoom
 -- f → Omnifocus quick entry
 -- m → Alfred -> migraines (can also set with function)
 -- n → Notifications configure in System preferences → Keyboard → Shortcuts → Mission Control)
 -- SPACE → iterm2 hotkey window
-hyperBindings = {'f','m','n','SPACE'}
+hyperBindings = {'a','f','m','n','SPACE'}
 
 for i,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function() hs.eventtap.keyStroke({'cmd','alt','shift','ctrl'}, key)
